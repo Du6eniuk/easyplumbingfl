@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Easy Plumbing FL — Logo Concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Montserrat:wght@600;700;800&family=Nunito:wght@700;800;900&family=Pacifico&display=swap">
+<style>
+  :root {
+    --page: #f2f1ed;
+    --card: #ffffff;
+    --ink: #15181e;
+    --muted: #5f6672;
+    --line: #e3e1db;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--page);
+    color: var(--ink);
+    font: 15px/1.55 Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 20px 72px; }
+
+  /* Sheet header */
+  .sheet-head { padding: 52px 4px 4px; }
+  .kicker { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  h1 { font-size: clamp(28px, 4.2vw, 42px); line-height: 1.12; letter-spacing: -.025em; margin: 10px 0 14px; }
+  .lede { max-width: 760px; margin: 0; color: var(--muted); font-size: 16px; }
+
+  /* Concept card */
+  .concept { background: var(--card); border: 1px solid var(--line); border-radius: 22px; padding: clamp(18px, 3vw, 32px); margin-top: 28px; }
+  .concept-head { display: grid; grid-template-columns: auto 1fr; column-gap: 14px; row-gap: 4px; align-items: baseline; margin-bottom: 22px; }
+  .num { font-weight: 700; font-size: 14px; color: var(--muted); font-variant-numeric: tabular-nums; }
+  .concept-head h2 { margin: 0; font-size: 24px; letter-spacing: -.015em; }
+  .tags { grid-column: 2; font-size: 13px; color: var(--muted); font-weight: 500; }
+  .concept-head p { grid-column: 2; margin: 8px 0 0; max-width: 800px; color: #3d434d; }
+
+  .grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 14px; }
+  .tile { position: relative; margin: 0; border-radius: 16px; border: 1px solid var(--line); padding: 44px 28px 30px; display: flex; align-items: center; justify-content: center; min-height: 240px; background: #fff; }
+  .tile .cap { position: absolute; top: 13px; left: 16px; font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  .tile.dark { border-color: transparent; }
+  .tile.dark .cap { color: rgba(255,255,255,.62); }
+  .t-main { grid-column: span 7; }
+  .t-dark { grid-column: span 5; }
+  .t-icons { grid-column: span 5; gap: 26px; flex-wrap: wrap; }
+  .t-palette { grid-column: span 7; flex-direction: column; align-items: stretch; justify-content: flex-end; gap: 16px; }
+  .t-site { grid-column: 1 / -1; padding: 44px 18px 18px; background: #f7f7f5; }
+
+  .lockup { display: block; width: 100%; height: auto; }
+  .t-main .lockup { max-width: 540px; }
+  .t-dark .lockup { max-width: 400px; }
+
+  /* Icon row */
+  .appicon { width: 104px; height: 104px; border-radius: 24px; display: grid; place-items: center; box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 8px 20px rgba(0,0,0,.10); }
+  .appicon svg { width: 76%; height: 76%; }
+  .avatar { width: 104px; height: 104px; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--line); }
+  .avatar svg { width: 70%; height: 70%; }
+  .favs { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+  .tab { display: flex; align-items: center; gap: 8px; background: #efeeea; border-radius: 8px 8px 0 0; padding: 7px 12px; font-size: 12px; color: #4a505a; }
+  .tab svg { width: 16px; height: 16px; flex: none; }
+  .favsizes { display: flex; align-items: flex-end; gap: 12px; }
+  .favsizes small { display: block; font-size: 10px; color: var(--muted); text-align: center; margin-top: 3px; }
+
+  /* Palette */
+  .swatches { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; }
+  .sw { border-radius: 12px; overflow: hidden; border: 1px solid rgba(0,0,0,.06); }
+  .sw i { display: block; height: 78px; background: var(--c); }
+  .sw div { padding: 8px 10px 10px; }
+  .sw b { display: block; font-size: 12px; font-weight: 600; }
+  .sw code { font: 500 11px/1.4 ui-monospace, SFMono-Regular, Consolas, monospace; color: var(--muted); }
+  .sw em { display: block; font-style: normal; font-size: 11px; color: var(--muted); }
+  .type { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 13px; color: #3d434d; }
+  .type b { font-weight: 600; color: var(--ink); }
+
+  /* Mini website preview */
+  .mock { width: 100%; border-radius: 12px; overflow: hidden; background: #fff; border: 1px solid #e3e1db; box-shadow: 0 1px 2px rgba(0,0,0,.05), 0 14px 34px rgba(0,0,0,.08); }
+  .mock-chrome { display: flex; align-items: center; gap: 6px; padding: 9px 12px; background: #ebeae6; border-bottom: 1px solid #dfddd7; }
+  .mock-chrome i { width: 9px; height: 9px; border-radius: 50%; background: #d1cfc9; }
+  .mock-chrome span { margin-left: 10px; font-size: 11px; color: #8a8f98; background: #fff; border-radius: 6px; padding: 2px 12px; }
+  .mock-nav { display: flex; align-items: center; gap: 22px; padding: 14px 28px; background: #fff; border-bottom: 1px solid #eee; }
+  .mock-logo { height: 42px; width: auto; flex: none; }
+  .mock-links { display: flex; gap: 22px; margin-left: auto; font-size: 13px; font-weight: 500; color: #3b4250; }
+  .mock-btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 10px; font-weight: 700; font-size: 13px; white-space: nowrap; }
+  .mock-hero { display: grid; grid-template-columns: 1.25fr 1fr; gap: 32px; padding: 50px 28px 54px; align-items: center; }
+  .mock-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+  .mock-hero h3 { margin: 12px 0 14px; font-size: 46px; line-height: 1.02; }
+  .mock-hero p { margin: 0 0 22px; font-size: 14px; max-width: 440px; }
+  .mock-ctas { display: flex; gap: 10px; flex-wrap: wrap; }
+  .mock-svcs { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .mock-svc { padding: 14px; border-radius: 12px; font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 10px; }
+  .mock-svc b { width: 28px; height: 28px; border-radius: 8px; flex: none; }
+
+  /* Concept 1 site theme */
+  .mock-c1 .mock-btn { background: #FFC53D; color: #0B2A4A; }
+  .mock-c1 .mock-hero { background: radial-gradient(120% 90% at 100% 0%, #11497a 0%, #0B2A4A 55%); color: #fff; }
+  .mock-c1 .mock-eyebrow { color: #5CD0FF; }
+  .mock-c1 .mock-hero h3 { font-family: Nunito, sans-serif; font-weight: 900; letter-spacing: -.02em; }
+  .mock-c1 .mock-hero h3 em { font-style: normal; color: #3CCBF4; }
+  .mock-c1 .mock-hero p { color: rgba(255,255,255,.78); }
+  .mock-c1 .ghost { background: transparent; color: #fff; box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.45); }
+  .mock-c1 .mock-svc { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); color: #fff; }
+  .mock-c1 .mock-svc b { background: linear-gradient(#3CCBF4, #0A78CF); }
+
+  /* Concept 2 site theme */
+  .mock-c2 .mock-btn { background: #E8611A; color: #fff; }
+  .mock-c2 .mock-hero { background: #FBF4EA; color: #0B4A56; }
+  .mock-c2 .mock-eyebrow { color: #13828D; }
+  .mock-c2 .mock-hero h3 { font-family: Montserrat, sans-serif; font-weight: 800; letter-spacing: -.02em; }
+  .mock-c2 .mock-hero h3 em { font-family: Pacifico, cursive; font-weight: 400; font-style: normal; color: #E8611A; letter-spacing: 0; }
+  .mock-c2 .mock-hero p { color: #3f5a60; }
+  .mock-c2 .ghost { background: transparent; color: #0B4A56; box-shadow: inset 0 0 0 1.5px #0B4A56; }
+  .mock-c2 .mock-svc { background: #fff; color: #0B4A56; box-shadow: 0 1px 2px rgba(11,74,86,.08), 0 6px 16px rgba(11,74,86,.08); }
+  .mock-c2 .mock-svc b { background: #13828D; }
+  .mock-c2 .mock-svc:nth-child(2n) b { background: #F68A1F; }
+
+  /* Concept 3 site theme */
+  .mock-c3 .mock-nav { background: #13284A; border-bottom-color: #13284A; --c3-pipe: #fff; --c3-mid: #fff; --c3-word: #fff; --c3-sub: #fff; }
+  .mock-c3 .mock-links { color: rgba(255,255,255,.82); }
+  .mock-c3 .mock-btn { background: #D9342A; color: #fff; border-radius: 6px; text-transform: uppercase; letter-spacing: .06em; }
+  .mock-c3 .mock-hero { background: linear-gradient(160deg, #183563 0%, #0E1E38 70%); color: #fff; }
+  .mock-c3 .mock-eyebrow { color: #7FB0FF; }
+  .mock-c3 .mock-hero h3 { font-family: "Barlow Condensed", sans-serif; font-weight: 800; text-transform: uppercase; font-size: 56px; line-height: .95; letter-spacing: .005em; }
+  .mock-c3 .mock-hero h3 em { font-style: normal; color: #4D93FF; }
+  .mock-c3 .mock-hero p { color: rgba(255,255,255,.78); }
+  .mock-c3 .ghost { background: transparent; color: #fff; box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.45); }
+  .mock-c3 .mock-svc { background: rgba(255,255,255,.05); border-left: 3px solid #1F6FE0; border-radius: 6px; color: #fff; font-family: "Barlow Condensed", sans-serif; font-size: 16px; letter-spacing: .03em; text-transform: uppercase; }
+  .mock-c3 .mock-svc:nth-child(2n) { border-left-color: #D9342A; }
+  .mock-c3 .mock-svc b { display: none; }
+
+  .sheet-foot { margin-top: 32px; padding: 24px 28px; border-radius: 18px; border: 1px dashed #cfccc4; color: #3d434d; }
+  .sheet-foot h2 { font-size: 16px; margin: 0 0 6px; }
+  .sheet-foot p { margin: 0; }
+
+  @media (max-width: 900px) {
+    .grid > * { grid-column: 1 / -1; }
+    .mock-links { display: none; }
+    .mock-hero { grid-template-columns: 1fr; }
+    .mock-hero h3 { font-size: 36px; }
+    .mock-c3 .mock-hero h3 { font-size: 44px; }
+  }
+  @media (max-width: 560px) {
+    .tile { min-height: 0; padding: 40px 18px 24px; }
+    .t-main, .t-dark { min-height: 160px; }
+    .swatches { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .mock-nav { padding: 12px 16px; }
+    .mock-nav .mock-btn { display: none; }
+    .mock-hero { padding: 36px 18px 40px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== Shared SVG definitions ===================== -->
+<svg aria-hidden="true" width="0" height="0" style="position:absolute;overflow:hidden">
+  <defs>
+    <!-- Concept 1: drop-shaped "e" -->
+    <linearGradient id="c1-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#3CCBF4"/>
+      <stop offset="1" stop-color="#0A78CF"/>
+    </linearGradient>
+    <clipPath id="c1-outer">
+      <path d="M50 4 C42 15.5 16 40 16 62 A34 34 0 0 0 84 62 C84 40 58 15.5 50 4 Z"/>
+    </clipPath>
+    <mask id="c1-mask" maskUnits="userSpaceOnUse" x="0" y="0" width="100" height="100">
+      <path fill="#fff" d="M50 4 C42 15.5 16 40 16 62 A34 34 0 0 0 84 62 C84 40 58 15.5 50 4 Z"/>
+      <path fill="#000" d="M50 25 C44.8 32.4 28 47 28 62 A22 22 0 0 0 72 62 C72 47 55.2 32.4 50 25 Z"/>
+      <rect fill="#fff" x="0" y="54" width="100" height="12" clip-path="url(#c1-outer)"/>
+      <polygon fill="#000" points="55.1,66 110,66 110,109"/>
+    </mask>
+
+    <!-- Concept 2: sunset inside a drop -->
+    <clipPath id="c2-clip">
+      <path d="M50 4 C42 15.5 16 40 16 62 A34 34 0 0 0 84 62 C84 40 58 15.5 50 4 Z"/>
+    </clipPath>
+  </defs>
+
+  <symbol id="c1-mark" viewBox="0 0 100 100">
+    <rect width="100" height="100" mask="url(#c1-mask)" style="fill: var(--c1-mark, url(#c1-grad))"/>
+  </symbol>
+
+  <symbol id="c2-mark" viewBox="0 0 100 100">
+    <g clip-path="url(#c2-clip)">
+      <rect width="100" height="100" style="fill: var(--c2-sky, #13828D)"/>
+      <circle cx="50" cy="64" r="20" style="fill: var(--c2-sun, #F68A1F)"/>
+      <rect x="0" y="54.6" width="100" height="2" style="fill: var(--c2-sky, #13828D)"/>
+      <rect x="0" y="58.9" width="100" height="2.6" style="fill: var(--c2-sky, #13828D)"/>
+      <rect x="0" y="64" width="100" height="40" style="fill: var(--c2-sea, #0B4A56)"/>
+      <g fill="none" stroke="#fff" stroke-width="3.2" stroke-linecap="round">
+        <path d="M24 74 q6.5 -4.5 13 0 t13 0 t13 0 t13 0"/>
+        <path d="M31 84 q6.5 -4.5 13 0 t13 0 t13 0"/>
+      </g>
+    </g>
+  </symbol>
+
+  <symbol id="c3-mark" viewBox="0 0 100 100">
+    <g fill="none" stroke-width="15" style="stroke: var(--c3-pipe, #13284A)">
+      <path d="M80 17 H40 A17 17 0 0 0 23 34 V66 A17 17 0 0 0 40 83 H80"/>
+      <path d="M23 50 H66"/>
+    </g>
+    <rect x="76" y="6.5" width="11" height="21" rx="2.5" style="fill: var(--c3-hot, #D9342A)"/>
+    <rect x="62" y="39.5" width="11" height="21" rx="2.5" style="fill: var(--c3-mid, #13284A)"/>
+    <rect x="76" y="72.5" width="11" height="21" rx="2.5" style="fill: var(--c3-cold, #1F6FE0)"/>
+  </symbol>
+
+  <!-- Lockups (mark + wordmark). Each outer <svg> uses viewBox "0 0 W H" matching the symbol's size. -->
+  <symbol id="c1-lockup" viewBox="15 5 551 118">
+    <use href="#c1-mark" x="0" y="4" width="120" height="120"/>
+    <text x="118" y="78" font-family="Nunito" font-weight="900" font-size="66" letter-spacing="-1.5"><tspan style="fill: var(--c1-easy, #0E9AE0)">easy</tspan><tspan style="fill: var(--c1-word, #0B2A4A)"> plumbing</tspan></text>
+    <rect x="119" y="103.75" width="151" height="2.5" rx="1.25" style="fill: var(--c1-rule, #0FA3E0)"/>
+    <text x="283.95" y="111" font-family="Nunito" font-weight="800" font-size="16" letter-spacing="7" style="fill: var(--c1-sub, #0B2A4A)">FLORIDA</text>
+    <rect x="411.35" y="103.75" width="150.95" height="2.5" rx="1.25" style="fill: var(--c1-rule, #0FA3E0)"/>
+  </symbol>
+
+  <symbol id="c2-lockup" viewBox="16 5 500 118">
+    <use href="#c2-mark" x="0" y="4" width="120" height="120"/>
+    <text x="118" y="80" font-family="Pacifico" font-size="64" style="fill: var(--c2-easy, #E8611A)">Easy</text>
+    <text x="261" y="80" font-family="Montserrat" font-weight="800" font-size="40" letter-spacing="3" style="fill: var(--c2-word, #0B4A56)">PLUMBING</text>
+    <g fill="none" stroke-width="2" stroke-linecap="round" style="stroke: var(--c2-wave, #F68A1F)">
+      <path d="M263 93.5 q3.78 -2.6 7.56 0 t7.56 0 t7.56 0 t7.56 0 t7.56 0 t7.56 0 t7.56 0 t7.56 0"/>
+      <path d="M450.9 93.5 q3.78 -2.6 7.56 0 t7.56 0 t7.56 0 t7.56 0 t7.56 0 t7.56 0 t7.56 0 t7.56 0"/>
+    </g>
+    <text x="333.55" y="99" font-family="Montserrat" font-weight="700" font-size="15" letter-spacing="6" style="fill: var(--c2-sub, #13828D)">FLORIDA</text>
+  </symbol>
+
+  <symbol id="c3-lockup" viewBox="15 5 536 118">
+    <use href="#c3-mark" x="0" y="4" width="120" height="120"/>
+    <text x="124" y="78" font-family="Barlow Condensed" font-weight="800" font-size="72" letter-spacing="1" style="fill: var(--c3-word, #13284A)">EASY PLUMBING</text>
+    <rect x="126" y="97" width="142.27" height="3" style="fill: var(--c3-hot, #D9342A)"/>
+    <text x="282.27" y="106" font-family="Barlow Condensed" font-weight="700" font-size="20" letter-spacing="8" style="fill: var(--c3-sub, #13284A)">FLORIDA</text>
+    <rect x="403.73" y="97" width="142.27" height="3" style="fill: var(--c3-cold, #1F6FE0)"/>
+  </symbol>
+</svg>
+
+<main class="wrap">
+  <header class="sheet-head">
+    <div class="kicker">Brand exploration · Round 1</div>
+    <h1>Easy Plumbing FL — logo concepts</h1>
+    <p class="lede">Three directions, each with a palette that carries straight into the website. Every mark is vector, holds up at favicon size, and works on light and dark backgrounds.</p>
+  </header>
+
+  <!-- ===================== Concept 1 ===================== -->
+  <section class="concept" id="concept-1">
+    <header class="concept-head">
+      <span class="num">01</span>
+      <h2>Fresh Drop</h2>
+      <span class="tags">Friendly · modern · clean</span>
+      <p>The lowercase <em>e</em> of “easy” is drawn as a single water drop. Rounded lowercase type keeps it approachable: plumbing that feels simple, not intimidating. Sunshine yellow is kept for buttons only, so “Call now” always stands out.</p>
+    </header>
+    <div class="grid">
+      <figure class="tile t-main"><span class="cap">Primary logo</span>
+        <svg class="lockup" viewBox="0 0 551 118" role="img" aria-label="Easy Plumbing Florida, concept 1"><use href="#c1-lockup"/></svg>
+      </figure>
+      <figure class="tile t-dark dark" style="background:#0B2A4A; --c1-easy:#5CD0FF; --c1-word:#fff; --c1-sub:rgba(255,255,255,.78); --c1-rule:#3CCBF4"><span class="cap">On dark</span>
+        <svg class="lockup" viewBox="0 0 551 118" role="img" aria-label="Concept 1 on dark"><use href="#c1-lockup"/></svg>
+      </figure>
+      <figure class="tile t-icons"><span class="cap">Icon · social · favicon</span>
+        <div class="appicon" style="background:#0B2A4A"><svg viewBox="0 0 100 100"><use href="#c1-mark"/></svg></div>
+        <div class="avatar" style="background:#E9F7FD"><svg viewBox="0 0 100 100"><use href="#c1-mark"/></svg></div>
+        <div class="favs">
+          <div class="tab"><svg viewBox="0 0 100 100"><use href="#c1-mark"/></svg>Easy Plumbing FL</div>
+          <div class="favsizes">
+            <div><svg width="48" height="48" viewBox="0 0 100 100"><use href="#c1-mark"/></svg><small>48</small></div>
+            <div><svg width="32" height="32" viewBox="0 0 100 100"><use href="#c1-mark"/></svg><small>32</small></div>
+            <div><svg width="16" height="16" viewBox="0 0 100 100"><use href="#c1-mark"/></svg><small>16</small></div>
+          </div>
+        </div>
+      </figure>
+      <div class="tile t-palette"><span class="cap">Palette &amp; type</span>
+        <div class="swatches">
+          <div class="sw" style="--c:#0B2A4A"><i></i><div><b>Deep Navy</b><code>#0B2A4A</code><em>Text, dark sections</em></div></div>
+          <div class="sw" style="--c:#0FA3E0"><i></i><div><b>Aqua</b><code>#0FA3E0</code><em>Brand, highlights</em></div></div>
+          <div class="sw" style="--c:#0A6FB8"><i></i><div><b>Ocean</b><code>#0A6FB8</code><em>Links, icons</em></div></div>
+          <div class="sw" style="--c:#FFC53D"><i></i><div><b>Sunshine</b><code>#FFC53D</code><em>Buttons / CTAs</em></div></div>
+          <div class="sw" style="--c:#E9F7FD"><i></i><div><b>Sky Mist</b><code>#E9F7FD</code><em>Light sections</em></div></div>
+        </div>
+        <div class="type"><span><b>Headings:</b> Nunito Black</span><span><b>Body:</b> Inter</span></div>
+      </div>
+      <div class="tile t-site"><span class="cap">How it carries into the website</span>
+        <div class="mock mock-c1">
+          <div class="mock-chrome"><i></i><i></i><i></i><span>easyplumbingfl.com</span></div>
+          <div class="mock-nav">
+            <svg class="mock-logo" viewBox="0 0 551 118" aria-hidden="true"><use href="#c1-lockup"/></svg>
+            <div class="mock-links"><span>Services</span><span>Service Areas</span><span>Reviews</span><span>About</span></div>
+            <span class="mock-btn">Call Now</span>
+          </div>
+          <div class="mock-hero">
+            <div>
+              <span class="mock-eyebrow">Florida plumbing, done right</span>
+              <h3>Plumbing made <em>easy.</em></h3>
+              <p>Leaks, clogs, water heaters and repipes — fixed right the first time, with upfront pricing and no surprises.</p>
+              <div class="mock-ctas"><span class="mock-btn">Get a Free Quote</span><span class="mock-btn ghost">(555) 555-0123</span></div>
+            </div>
+            <div class="mock-svcs">
+              <div class="mock-svc"><b></b>Leak Repair</div>
+              <div class="mock-svc"><b></b>Drain Cleaning</div>
+              <div class="mock-svc"><b></b>Water Heaters</div>
+              <div class="mock-svc"><b></b>Repiping</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Concept 2 ===================== -->
+  <section class="concept" id="concept-2">
+    <header class="concept-head">
+      <span class="num">02</span>
+      <h2>Sunshine Coast</h2>
+      <span class="tags">Local · warm · coastal</span>
+      <p>A Florida sunset set inside a water drop: water for the trade, sun and surf for the state. The retro script-and-caps pairing feels like a local, family-run shop. Teal and sunset orange stand apart from the sea of blue-and-red plumbers.</p>
+    </header>
+    <div class="grid">
+      <figure class="tile t-main"><span class="cap">Primary logo</span>
+        <svg class="lockup" viewBox="0 0 500 118" role="img" aria-label="Easy Plumbing Florida, concept 2"><use href="#c2-lockup"/></svg>
+      </figure>
+      <figure class="tile t-dark dark" style="background:#0B4A56; --c2-easy:#FFA14A; --c2-word:#fff; --c2-sub:#8FD6DC; --c2-wave:#FFA14A; --c2-sky:#1C9AA5; --c2-sea:#127A85"><span class="cap">On dark</span>
+        <svg class="lockup" viewBox="0 0 500 118" role="img" aria-label="Concept 2 on dark"><use href="#c2-lockup"/></svg>
+      </figure>
+      <figure class="tile t-icons"><span class="cap">Icon · social · favicon</span>
+        <div class="appicon" style="background:#FBF4EA"><svg viewBox="0 0 100 100"><use href="#c2-mark"/></svg></div>
+        <div class="avatar" style="background:#fff"><svg viewBox="0 0 100 100"><use href="#c2-mark"/></svg></div>
+        <div class="favs">
+          <div class="tab"><svg viewBox="0 0 100 100"><use href="#c2-mark"/></svg>Easy Plumbing FL</div>
+          <div class="favsizes">
+            <div><svg width="48" height="48" viewBox="0 0 100 100"><use href="#c2-mark"/></svg><small>48</small></div>
+            <div><svg width="32" height="32" viewBox="0 0 100 100"><use href="#c2-mark"/></svg><small>32</small></div>
+            <div><svg width="16" height="16" viewBox="0 0 100 100"><use href="#c2-mark"/></svg><small>16</small></div>
+          </div>
+        </div>
+      </figure>
+      <div class="tile t-palette"><span class="cap">Palette &amp; type</span>
+        <div class="swatches">
+          <div class="sw" style="--c:#0B4A56"><i></i><div><b>Deep Teal</b><code>#0B4A56</code><em>Text, dark sections</em></div></div>
+          <div class="sw" style="--c:#13828D"><i></i><div><b>Gulf Teal</b><code>#13828D</code><em>Brand, links</em></div></div>
+          <div class="sw" style="--c:#E8611A"><i></i><div><b>Sunset</b><code>#E8611A</code><em>Buttons / CTAs</em></div></div>
+          <div class="sw" style="--c:#F68A1F"><i></i><div><b>Citrus</b><code>#F68A1F</code><em>Accents, icons</em></div></div>
+          <div class="sw" style="--c:#FBF4EA"><i></i><div><b>Sand</b><code>#FBF4EA</code><em>Light sections</em></div></div>
+        </div>
+        <div class="type"><span><b>Headings:</b> Montserrat ExtraBold</span><span><b>Accent:</b> Pacifico</span><span><b>Body:</b> Inter</span></div>
+      </div>
+      <div class="tile t-site"><span class="cap">How it carries into the website</span>
+        <div class="mock mock-c2">
+          <div class="mock-chrome"><i></i><i></i><i></i><span>easyplumbingfl.com</span></div>
+          <div class="mock-nav">
+            <svg class="mock-logo" viewBox="0 0 500 118" aria-hidden="true"><use href="#c2-lockup"/></svg>
+            <div class="mock-links"><span>Services</span><span>Service Areas</span><span>Reviews</span><span>About</span></div>
+            <span class="mock-btn">Call Now</span>
+          </div>
+          <div class="mock-hero">
+            <div>
+              <span class="mock-eyebrow">Florida plumbing, done right</span>
+              <h3>Plumbing made <em>easy.</em></h3>
+              <p>Leaks, clogs, water heaters and repipes — fixed right the first time, with upfront pricing and no surprises.</p>
+              <div class="mock-ctas"><span class="mock-btn">Get a Free Quote</span><span class="mock-btn ghost">(555) 555-0123</span></div>
+            </div>
+            <div class="mock-svcs">
+              <div class="mock-svc"><b></b>Leak Repair</div>
+              <div class="mock-svc"><b></b>Drain Cleaning</div>
+              <div class="mock-svc"><b></b>Water Heaters</div>
+              <div class="mock-svc"><b></b>Repiping</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== Concept 3 ===================== -->
+  <section class="concept" id="concept-3">
+    <header class="concept-head">
+      <span class="num">03</span>
+      <h2>Hot &amp; Cold</h2>
+      <span class="tags">Bold · established · trade</span>
+      <p>An <em>E</em> built from real pipe runs and fittings, with red and blue caps borrowed from hot and cold water lines. Condensed capitals read from across the street on a van or yard sign. The most “serious contractor” of the three.</p>
+    </header>
+    <div class="grid">
+      <figure class="tile t-main"><span class="cap">Primary logo</span>
+        <svg class="lockup" viewBox="0 0 536 118" role="img" aria-label="Easy Plumbing Florida, concept 3"><use href="#c3-lockup"/></svg>
+      </figure>
+      <figure class="tile t-dark dark" style="background:#13284A; --c3-pipe:#fff; --c3-mid:#fff; --c3-word:#fff; --c3-sub:#fff"><span class="cap">On dark</span>
+        <svg class="lockup" viewBox="0 0 536 118" role="img" aria-label="Concept 3 on dark"><use href="#c3-lockup"/></svg>
+      </figure>
+      <figure class="tile t-icons"><span class="cap">Icon · social · favicon</span>
+        <div class="appicon" style="background:#13284A; --c3-pipe:#fff; --c3-mid:#fff"><svg viewBox="0 0 100 100"><use href="#c3-mark"/></svg></div>
+        <div class="avatar" style="background:#fff"><svg viewBox="0 0 100 100"><use href="#c3-mark"/></svg></div>
+        <div class="favs">
+          <div class="tab"><svg viewBox="0 0 100 100"><use href="#c3-mark"/></svg>Easy Plumbing FL</div>
+          <div class="favsizes">
+            <div><svg width="48" height="48" viewBox="0 0 100 100"><use href="#c3-mark"/></svg><small>48</small></div>
+            <div><svg width="32" height="32" viewBox="0 0 100 100"><use href="#c3-mark"/></svg><small>32</small></div>
+            <div><svg width="16" height="16" viewBox="0 0 100 100"><use href="#c3-mark"/></svg><small>16</small></div>
+          </div>
+        </div>
+      </figure>
+      <div class="tile t-palette"><span class="cap">Palette &amp; type</span>
+        <div class="swatches">
+          <div class="sw" style="--c:#13284A"><i></i><div><b>Navy</b><code>#13284A</code><em>Text, header, footer</em></div></div>
+          <div class="sw" style="--c:#1F6FE0"><i></i><div><b>Cold Blue</b><code>#1F6FE0</code><em>Links, icons</em></div></div>
+          <div class="sw" style="--c:#D9342A"><i></i><div><b>Hot Red</b><code>#D9342A</code><em>Buttons / CTAs</em></div></div>
+          <div class="sw" style="--c:#8A94A6"><i></i><div><b>Steel</b><code>#8A94A6</code><em>Borders, meta text</em></div></div>
+          <div class="sw" style="--c:#F2F5F9"><i></i><div><b>Porcelain</b><code>#F2F5F9</code><em>Light sections</em></div></div>
+        </div>
+        <div class="type"><span><b>Headings:</b> Barlow Condensed ExtraBold</span><span><b>Body:</b> Inter</span></div>
+      </div>
+      <div class="tile t-site"><span class="cap">How it carries into the website</span>
+        <div class="mock mock-c3">
+          <div class="mock-chrome"><i></i><i></i><i></i><span>easyplumbingfl.com</span></div>
+          <div class="mock-nav">
+            <svg class="mock-logo" viewBox="0 0 536 118" aria-hidden="true"><use href="#c3-lockup"/></svg>
+            <div class="mock-links"><span>Services</span><span>Service Areas</span><span>Reviews</span><span>About</span></div>
+            <span class="mock-btn">Call Now</span>
+          </div>
+          <div class="mock-hero">
+            <div>
+              <span class="mock-eyebrow">Florida plumbing, done right</span>
+              <h3>Plumbing made <em>easy.</em></h3>
+              <p>Leaks, clogs, water heaters and repipes — fixed right the first time, with upfront pricing and no surprises.</p>
+              <div class="mock-ctas"><span class="mock-btn">Get a Free Quote</span><span class="mock-btn ghost">(555) 555-0123</span></div>
+            </div>
+            <div class="mock-svcs">
+              <div class="mock-svc"><b></b>Leak Repair</div>
+              <div class="mock-svc"><b></b>Drain Cleaning</div>
+              <div class="mock-svc"><b></b>Water Heaters</div>
+              <div class="mock-svc"><b></b>Repiping</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="sheet-foot">
+    <h2>Next step</h2>
+    <p>Pick a direction, or mix and match (for example, the mark from 01 with the palette from 02). The chosen logo then gets refined and exported as final SVG/PNG files and a favicon set before the site build starts.</p>
+  </footer>
+</main>
+</body>
+</html>
