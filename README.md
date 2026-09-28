@@ -24,25 +24,37 @@ Logo text is converted to vector outlines, so `images/logo.svg` renders identica
 
 ## Running it
 
-Open `index.html` directly, or serve the folder:
-
 ```bash
-python -m http.server 8000
+python build.py
 ```
 
-VS Code's Live Server works too. All paths are relative to the project root.
+That renders `dist/`. Point Live Server (or any static server) at `dist/index.html`.
+Re-run it after editing a template or the content file. No dependencies: the build
+is standard-library Python only.
 
 ## Structure
 
 ```
-index.html          one page: hero, services, process, about, reviews, areas, FAQ
-css/styles.css      tokens → base → layout → components → sections
-js/main.js          mobile menu, scroll reveal, active nav link, quote form
-images/             logo, favicons, social share image
-brand/              logo concept sheet from the exploration round
+templates/index.html  the page: hero, services, process, about, reviews, areas, FAQ
+content/site.json     the text the client edits: phone, services, reviews, areas, FAQ
+build.py              tiny renderer, fills the template from the content file
+.pages.yml            field definitions for the client's editor (Pages CMS)
+css/styles.css        tokens → base → layout → components → sections
+js/main.js            mobile menu, scroll reveal, active nav link, quote form
+images/               logo, favicons, social share image
+brand/                logo concept sheet from the exploration round
+dist/                 build output, not committed
 ```
 
 The nav links jump to sections on the one page; there are no separate subpages.
+
+## Who edits what
+
+Design and layout live in `templates/` and `css/`. Everything a client would want to
+change — phone number, hours, service area, the service list, reviews, FAQ, search
+listing — lives in `content/site.json` and is edited through [Pages CMS](https://pagescms.org),
+which commits to this repo and triggers a Netlify rebuild. Editors invited by email
+don't need a GitHub account.
 
 ## About the content
 

@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Plumber in Tampa Bay, FL | Easy Plumbing FL</title>
-  <meta name="description" content="Licensed, insured Tampa Bay plumbers for leaks, clogs, water heaters, slab leaks and repipes. Upfront flat-rate pricing, same-day service and 24/7 emergency help.">
+  <title>{{ seo.title }}</title>
+  <meta name="description" content="{{ seo.description }}">
   <link rel="canonical" href="https://easyplumbingfl.site/">
   <meta name="theme-color" content="#0B4A56">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Easy Plumbing FL">
-  <meta property="og:title" content="Easy Plumbing FL | Plumbing made easy in Tampa Bay">
-  <meta property="og:description" content="Leaks, clogs, water heaters and repipes, fixed right the first time. Upfront pricing, same-day service, 24/7 emergencies.">
+  <meta property="og:title" content="{{ seo.title }}">
+  <meta property="og:description" content="{{ seo.description }}">
   <meta property="og:url" content="https://easyplumbingfl.site/">
   <meta property="og:image" content="https://easyplumbingfl.site/images/og-image.jpg">
   <meta property="og:image:width" content="1200">
@@ -36,11 +36,11 @@
     "url": "https://easyplumbingfl.site/",
     "logo": "https://easyplumbingfl.site/images/logo.svg",
     "image": "https://easyplumbingfl.site/images/og-image.jpg",
-    "telephone": "+1-561-954-6558",
-    "email": "hello@easyplumbingfl.site",
+    "telephone": "{{ contact.phone_schema }}",
+    "email": "{{ contact.email }}",
     "priceRange": "$$",
-    "address": { "@type": "PostalAddress", "addressLocality": "Tampa", "addressRegion": "FL", "addressCountry": "US" },
-    "areaServed": ["Tampa", "St. Petersburg", "Clearwater", "Brandon", "Riverview", "Wesley Chapel", "Largo", "Palm Harbor", "Dunedin", "Temple Terrace", "Lutz", "Apollo Beach"],
+    "address": { "@type": "PostalAddress", "addressLocality": "{{ contact.city }}", "addressRegion": "FL", "addressCountry": "US" },
+    "areaServed": [{{#each areas}}"{{ . }}"{{ @sep }}{{/each}}],
     "openingHoursSpecification": [{
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
@@ -95,11 +95,11 @@
 
 <div class="topbar">
   <div class="container topbar__inner">
-    <p class="topbar__item"><span class="pulse" aria-hidden="true"></span>24/7 emergency service. Real plumbers answer.</p>
+    <p class="topbar__item"><span class="pulse" aria-hidden="true"></span>{{ contact.topbar_note }}</p>
     <ul class="topbar__list">
-      <li><svg class="icon"><use href="#i-phone"/></svg><a href="tel:+15619546558">(561) 954-6558</a></li>
-      <li><svg class="icon"><use href="#i-mail"/></svg><a href="mailto:hello@easyplumbingfl.site">hello@easyplumbingfl.site</a></li>
-      <li><svg class="icon"><use href="#i-pin"/></svg>Serving Tampa Bay, FL</li>
+      <li><svg class="icon"><use href="#i-phone"/></svg><a href="tel:{{ contact.phone_href }}">{{ contact.phone }}</a></li>
+      <li><svg class="icon"><use href="#i-mail"/></svg><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></li>
+      <li><svg class="icon"><use href="#i-pin"/></svg>Serving {{ contact.area_label }}, FL</li>
     </ul>
   </div>
 </div>
@@ -121,14 +121,14 @@
       </ul>
       <div class="nav__cta">
         <a class="btn btn--primary btn--lg" href="#quote">Get a Free Quote</a>
-        <a class="btn btn--outline btn--lg" href="tel:+15619546558"><svg class="icon"><use href="#i-phone"/></svg>(561) 954-6558</a>
+        <a class="btn btn--outline btn--lg" href="tel:{{ contact.phone_href }}"><svg class="icon"><use href="#i-phone"/></svg>{{ contact.phone }}</a>
       </div>
     </nav>
 
     <div class="header__actions">
-      <a class="header__phone" href="tel:+15619546558">
+      <a class="header__phone" href="tel:{{ contact.phone_href }}">
         <span class="header__phone-icon"><svg class="icon"><use href="#i-phone"/></svg></span>
-        <span><small>Call us 24/7</small>(561) 954-6558</span>
+        <span><small>Call us 24/7</small>{{ contact.phone }}</span>
       </a>
       <a class="btn btn--primary header__cta" href="#quote">Free Quote</a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
@@ -144,14 +144,14 @@
   <section class="hero" id="top">
     <div class="container hero__grid">
       <div class="hero__copy">
-        <p class="hero__badge"><span class="pulse" aria-hidden="true"></span>Plumbers available today in Tampa Bay</p>
+        <p class="hero__badge"><span class="pulse" aria-hidden="true"></span>Plumbers available today in {{ contact.area_label }}</p>
         <h1 class="hero__title">Plumbing made<br>
           <span class="hero__script">easy.<svg class="hero__swash" viewBox="0 0 200 20" preserveAspectRatio="none" aria-hidden="true"><path d="M5 14C60 5 130 3 195 9"/></svg></span>
         </h1>
-        <p class="hero__lead">Leaks, clogs, water heaters and full repipes, fixed right the first time by licensed local plumbers. You get a flat price before any work starts, and we leave your home cleaner than we found it.</p>
+        <p class="hero__lead">{{ hero.lead }}</p>
         <div class="hero__ctas">
           <a class="btn btn--primary btn--lg" href="#quote">Get a Free Quote<svg class="icon"><use href="#i-arrow"/></svg></a>
-          <a class="btn btn--outline btn--lg" href="tel:+15619546558"><svg class="icon"><use href="#i-phone"/></svg>(561) 954-6558</a>
+          <a class="btn btn--outline btn--lg" href="tel:{{ contact.phone_href }}"><svg class="icon"><use href="#i-phone"/></svg>{{ contact.phone }}</a>
         </div>
         <ul class="hero__checks">
           <li><svg class="icon"><use href="#i-check"/></svg>Licensed &amp; insured</li>
@@ -193,14 +193,8 @@
               <div class="field">
                 <label for="q-service">What do you need help with?</label>
                 <select id="q-service" name="service" required>
-                  <option value="" selected disabled>Choose a service</option>
-                  <option>Leak detection &amp; repair</option>
-                  <option>Slab leak</option>
-                  <option>Drain cleaning</option>
-                  <option>Water heater</option>
-                  <option>Repiping</option>
-                  <option>Sewer line</option>
-                  <option>Water softener / filtration</option>
+                  <option value="" selected disabled>Choose a service</option>{{#each services}}
+                  <option>{{ title }}</option>{{/each}}
                   <option>Something else</option>
                 </select>
                 <span class="field__error" aria-live="polite"></span>
@@ -231,11 +225,8 @@
   <!-- ============================== TRUST ============================== -->
   <section class="trust" aria-label="Why homeowners choose us">
     <div class="container trust__grid">
-      <div class="trust__item"><span class="trust__icon"><svg class="icon"><use href="#i-shield"/></svg></span><p><strong>Licensed &amp; insured</strong>State-licensed plumbers, fully insured.</p></div>
-      <div class="trust__item"><span class="trust__icon"><svg class="icon"><use href="#i-tag"/></svg></span><p><strong>Upfront pricing</strong>A flat quote before work starts.</p></div>
-      <div class="trust__item"><span class="trust__icon"><svg class="icon"><use href="#i-clock"/></svg></span><p><strong>Same-day service</strong>Most jobs done the day you call.</p></div>
-      <div class="trust__item"><span class="trust__icon"><svg class="icon"><use href="#i-award"/></svg></span><p><strong>1-year warranty</strong>On every repair, parts and labor.</p></div>
-    </div>
+{{#each trust}}      <div class="trust__item"><span class="trust__icon"><svg class="icon"><use href="#i-{{ icon }}"/></svg></span><p><strong>{{ title }}</strong>{{ text }}</p></div>
+{{/each}}    </div>
   </section>
 
   <!-- ============================== SERVICES ============================== -->
@@ -247,15 +238,8 @@
         <p>From a dripping faucet to a whole-home repipe, one call gets it handled by the same licensed, local team.</p>
       </header>
       <ul class="services">
-        <li class="service" data-reveal><span class="service__icon"><svg class="icon"><use href="#i-leak"/></svg></span><h3>Leak Detection &amp; Repair</h3><p>Hidden leaks pinpointed with acoustic and thermal tools, then repaired without tearing your home apart.</p></li>
-        <li class="service" data-reveal style="--d:1"><span class="service__icon"><svg class="icon"><use href="#i-slab"/></svg></span><h3>Slab Leak Repair</h3><p>Most Florida homes sit on a concrete slab. We locate slab leaks precisely and reroute or repair with minimal mess.</p></li>
-        <li class="service" data-reveal style="--d:2"><span class="service__icon"><svg class="icon"><use href="#i-drain"/></svg></span><h3>Drain Cleaning</h3><p>Slow sinks, backed-up tubs and main-line clogs cleared with professional snaking and hydro-jetting.</p></li>
-        <li class="service" data-reveal style="--d:3"><span class="service__icon"><svg class="icon"><use href="#i-heater"/></svg></span><h3>Water Heaters</h3><p>Tank and tankless water heaters repaired, flushed and replaced. Most installs are finished the same day.</p></li>
-        <li class="service" data-reveal><span class="service__icon"><svg class="icon"><use href="#i-pipe"/></svg></span><h3>Repiping</h3><p>Whole-home repipes in PEX or copper to replace aging polybutylene, galvanized and cast-iron lines.</p></li>
-        <li class="service" data-reveal style="--d:1"><span class="service__icon"><svg class="icon"><use href="#i-camera"/></svg></span><h3>Sewer Line Service</h3><p>Camera inspections, root removal and trenchless sewer repairs that keep your yard in one piece.</p></li>
-        <li class="service" data-reveal style="--d:2"><span class="service__icon"><svg class="icon"><use href="#i-glass"/></svg></span><h3>Softeners &amp; Filtration</h3><p>Florida's hard water is tough on fixtures and skin. Softeners, RO systems and whole-home filtration.</p></li>
-        <li class="service" data-reveal style="--d:3"><span class="service__icon"><svg class="icon"><use href="#i-faucet"/></svg></span><h3>Fixtures &amp; Toilets</h3><p>Faucets, toilets, garbage disposals and shower valves installed or repaired, neatly and fast.</p></li>
-      </ul>
+{{#each services}}        <li class="service" data-reveal style="--d:{{ @stagger }}"><span class="service__icon"><svg class="icon"><use href="#i-{{ icon }}"/></svg></span><h3>{{ title }}</h3><p>{{ description }}</p></li>
+{{/each}}      </ul>
     </div>
   </section>
 
@@ -264,10 +248,10 @@
     <div class="container emergency__inner">
       <div>
         <p class="emergency__kicker"><span class="pulse pulse--dark" aria-hidden="true"></span>24/7 emergency line</p>
-        <h2 id="emergency-title">Burst pipe? Water where it shouldn't be?</h2>
-        <p>Shut off your main water valve and call us. A licensed plumber can be on the way within the hour, day or night, weekends and holidays included.</p>
+        <h2 id="emergency-title">{{ emergency.title }}</h2>
+        <p>{{ emergency.text }}</p>
       </div>
-      <a class="btn btn--teal btn--xl" href="tel:+15619546558"><svg class="icon"><use href="#i-phone"/></svg>(561) 954-6558</a>
+      <a class="btn btn--teal btn--xl" href="tel:{{ contact.phone_href }}"><svg class="icon"><use href="#i-phone"/></svg>{{ contact.phone }}</a>
     </div>
   </section>
 
@@ -306,15 +290,13 @@
           <path fill="#073840" d="M0 446c100-18 190-18 280 0s140 14 200 2v92H0Z"/>
           <path class="scene-line" d="M64 424q14-9 28 0t28 0 28 0M300 478q14-9 28 0t28 0"/>
         </svg>
-        <div class="stat stat--a"><strong>4.9<svg class="icon icon--star" aria-hidden="true"><use href="#star-shape"/></svg></strong><span>Average rating</span></div>
-        <div class="stat stat--b"><strong>2,500+</strong><span>Jobs completed</span></div>
-        <div class="stat stat--c"><strong>&lt;60 min</strong><span>Emergency response</span></div>
-      </div>
+{{#each stats}}        <div class="stat stat--{{ pos }}"><strong>{{ value }}{{#if star }}<svg class="icon icon--star" aria-hidden="true"><use href="#star-shape"/></svg>{{/if}}</strong><span>{{ label }}</span></div>
+{{/each}}      </div>
 
       <div class="about__copy" data-reveal style="--d:1">
         <p class="eyebrow">Why neighbors call us</p>
         <h2>Local plumbers who treat your home like their own</h2>
-        <p>Easy Plumbing FL started with a simple promise: show up on time, explain the problem in plain English and charge exactly what we quoted. Every job still works that way.</p>
+        <p>{{ about.lead }}</p>
         <ul class="ticks">
           <li><svg class="icon"><use href="#i-check"/></svg><p><strong>Background-checked, uniformed techs.</strong> You'll know who's coming before they knock.</p></li>
           <li><svg class="icon"><use href="#i-check"/></svg><p><strong>Shoe covers and drop cloths, every time.</strong> Your floors stay as clean as we found them.</p></li>
@@ -332,25 +314,15 @@
       <header class="section-head" data-reveal>
         <p class="eyebrow">Happy homeowners</p>
         <h2>Rated 4.9 by our neighbors</h2>
-        <p>Here's what Tampa Bay homeowners say after we pack up the truck.</p>
+        <p>Here's what {{ contact.area_label }} homeowners say after we pack up the truck.</p>
       </header>
       <div class="reviews">
-        <figure class="review" data-reveal>
+{{#each reviews}}        <figure class="review" data-reveal style="--d:{{ @stagger }}">
           <svg class="stars" role="img" aria-label="5 out of 5 stars"><use href="#i-stars"/></svg>
-          <blockquote><p>Our water bill doubled and two other companies couldn't find why. Easy Plumbing found a slab leak in an hour, rerouted the line the same day and quoted exactly what we paid.</p></blockquote>
-          <figcaption><span class="avatar" aria-hidden="true">MR</span><span><strong>Maria R.</strong>Tampa · Slab leak repair</span></figcaption>
+          <blockquote><p>{{ quote }}</p></blockquote>
+          <figcaption><span class="avatar" aria-hidden="true">{{ initials }}</span><span><strong>{{ name }}</strong>{{ credit }}</span></figcaption>
         </figure>
-        <figure class="review" data-reveal style="--d:1">
-          <svg class="stars" role="img" aria-label="5 out of 5 stars"><use href="#i-stars"/></svg>
-          <blockquote><p>Water heater died on a Sunday morning. I called at 8, a plumber was here by 10 and we had hot water before lunch. Clean, friendly and no weekend upcharge games.</p></blockquote>
-          <figcaption><span class="avatar" aria-hidden="true">DK</span><span><strong>Derek K.</strong>St. Petersburg · Water heater</span></figcaption>
-        </figure>
-        <figure class="review" data-reveal style="--d:2">
-          <svg class="stars" role="img" aria-label="5 out of 5 stars"><use href="#i-stars"/></svg>
-          <blockquote><p>We repiped our 1978 home with them. The crew protected every floor, patched the drywall and finished a day early. You'd never know they were here.</p></blockquote>
-          <figcaption><span class="avatar" aria-hidden="true">LS</span><span><strong>Linda S.</strong>Clearwater · Whole-home repipe</span></figcaption>
-        </figure>
-      </div>
+{{/each}}      </div>
     </div>
   </section>
 
@@ -359,24 +331,13 @@
     <div class="container areas__inner">
       <div class="areas__copy" data-reveal>
         <p class="eyebrow eyebrow--light">Where we work</p>
-        <h2>Proudly serving the Tampa Bay area</h2>
+        <h2>Proudly serving the {{ contact.area_label }} area</h2>
         <p>Our trucks are stationed around the bay, so a plumber is never far away. Don't see your town? Give us a call. We probably cover it.</p>
-        <a class="btn btn--primary btn--lg" href="tel:+15619546558"><svg class="icon"><use href="#i-phone"/></svg>Call to check your area</a>
+        <a class="btn btn--primary btn--lg" href="tel:{{ contact.phone_href }}"><svg class="icon"><use href="#i-phone"/></svg>Call to check your area</a>
       </div>
       <ul class="areas__list" data-reveal style="--d:1">
-        <li><svg class="icon"><use href="#i-pin"/></svg>Tampa</li>
-        <li><svg class="icon"><use href="#i-pin"/></svg>St. Petersburg</li>
-        <li><svg class="icon"><use href="#i-pin"/></svg>Clearwater</li>
-        <li><svg class="icon"><use href="#i-pin"/></svg>Brandon</li>
-        <li><svg class="icon"><use href="#i-pin"/></svg>Riverview</li>
-        <li><svg class="icon"><use href="#i-pin"/></svg>Wesley Chapel</li>
-        <li><svg class="icon"><use href="#i-pin"/></svg>Largo</li>
-        <li><svg class="icon"><use href="#i-pin"/></svg>Palm Harbor</li>
-        <li><svg class="icon"><use href="#i-pin"/></svg>Dunedin</li>
-        <li><svg class="icon"><use href="#i-pin"/></svg>Temple Terrace</li>
-        <li><svg class="icon"><use href="#i-pin"/></svg>Lutz</li>
-        <li><svg class="icon"><use href="#i-pin"/></svg>Apollo Beach</li>
-      </ul>
+{{#each areas}}        <li><svg class="icon"><use href="#i-pin"/></svg>{{ . }}</li>
+{{/each}}      </ul>
     </div>
   </section>
 
@@ -388,27 +349,11 @@
         <h2>Frequently asked questions</h2>
       </header>
       <div class="faq" data-reveal>
-        <details class="faq__item" open>
-          <summary>How much do you charge?</summary>
-          <p>Every job gets a flat, upfront price after your plumber diagnoses the problem, before any work starts. The price we quote is the price you pay, even if the job takes longer than expected.</p>
+{{#each faq}}        <details class="faq__item"{{#if @first }} open{{/if}}>
+          <summary>{{ question }}</summary>
+          <p>{{ answer }}</p>
         </details>
-        <details class="faq__item">
-          <summary>Do you really offer 24/7 emergency service?</summary>
-          <p>Yes. Nights, weekends and holidays, a real person answers and a licensed plumber is dispatched, usually within the hour.</p>
-        </details>
-        <details class="faq__item">
-          <summary>Are your plumbers licensed and insured?</summary>
-          <p>Every plumber on our team is state-licensed, fully insured and background-checked. We're happy to share proof of coverage before we start.</p>
-        </details>
-        <details class="faq__item">
-          <summary>How quickly can you get here?</summary>
-          <p>Most calls get a same-day appointment with a two-hour arrival window. We text you when your plumber is on the way.</p>
-        </details>
-        <details class="faq__item">
-          <summary>Do you guarantee your work?</summary>
-          <p>All repairs come with a 1-year parts and labor warranty. New water heaters and repipes are also covered by the manufacturer's warranty.</p>
-        </details>
-      </div>
+{{/each}}      </div>
     </div>
   </section>
 
@@ -423,7 +368,7 @@
         </div>
         <div class="cta__actions">
           <a class="btn btn--primary btn--lg" href="#quote">Get a Free Quote</a>
-          <a class="btn btn--white btn--lg" href="tel:+15619546558"><svg class="icon"><use href="#i-phone"/></svg>(561) 954-6558</a>
+          <a class="btn btn--white btn--lg" href="tel:{{ contact.phone_href }}"><svg class="icon"><use href="#i-phone"/></svg>{{ contact.phone }}</a>
         </div>
       </div>
     </div>
@@ -434,7 +379,7 @@
   <div class="container footer__grid">
     <div class="footer__brand">
       <img src="images/logo-light.svg" alt="Easy Plumbing FL" width="499" height="118" loading="lazy">
-      <p>Licensed, insured plumbers serving homes and businesses across Tampa Bay. Honest prices, clean work and a real person on the phone, 24/7.</p>
+      <p>Licensed, insured plumbers serving homes and businesses across {{ contact.area_label }}. Honest prices, clean work and a real person on the phone, 24/7.</p>
     </div>
     <div>
       <h3>Services</h3>
@@ -459,10 +404,10 @@
     <div>
       <h3>Contact</h3>
       <ul class="footer__contact">
-        <li><svg class="icon"><use href="#i-phone"/></svg><a href="tel:+15619546558">(561) 954-6558</a></li>
-        <li><svg class="icon"><use href="#i-mail"/></svg><a href="mailto:hello@easyplumbingfl.site">hello@easyplumbingfl.site</a></li>
-        <li><svg class="icon"><use href="#i-clock"/></svg><span>Open 24/7 for emergencies<br>Office: Mon–Sat, 7am–7pm</span></li>
-        <li><svg class="icon"><use href="#i-pin"/></svg><span>Tampa Bay, Florida</span></li>
+        <li><svg class="icon"><use href="#i-phone"/></svg><a href="tel:{{ contact.phone_href }}">{{ contact.phone }}</a></li>
+        <li><svg class="icon"><use href="#i-mail"/></svg><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></li>
+        <li><svg class="icon"><use href="#i-clock"/></svg><span>{{ contact.hours_emergency }}<br>{{ contact.hours_office }}</span></li>
+        <li><svg class="icon"><use href="#i-pin"/></svg><span>{{ contact.area_label }}, Florida</span></li>
       </ul>
     </div>
   </div>
@@ -473,7 +418,7 @@
 </footer>
 
 <div class="mobile-bar">
-  <a class="btn btn--teal" href="tel:+15619546558"><svg class="icon"><use href="#i-phone"/></svg>Call now</a>
+  <a class="btn btn--teal" href="tel:{{ contact.phone_href }}"><svg class="icon"><use href="#i-phone"/></svg>Call now</a>
   <a class="btn btn--primary" href="#quote">Free quote</a>
 </div>
 

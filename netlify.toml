@@ -1,7 +1,9 @@
-# Netlify configuration — static site, nothing to build.
-# The whole repo root is published as-is.
+# Netlify configuration.
+# build.py renders templates/ + content/site.json into dist/. Python 3 ships
+# with Netlify's build image, so there is nothing to install.
 [build]
-  publish = "."
+  command = "python3 build.py"
+  publish = "dist"
 
 # Sensible security headers for a brochure site.
 [[headers]]

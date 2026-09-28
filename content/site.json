@@ -1,0 +1,162 @@
+{
+  "seo": {
+    "title": "Plumber in Tampa Bay, FL | Easy Plumbing FL",
+    "description": "Licensed, insured Tampa Bay plumbers for leaks, clogs, water heaters, slab leaks and repipes. Upfront flat-rate pricing, same-day service and 24/7 emergency help."
+  },
+  "contact": {
+    "phone": "(561) 954-6558",
+    "email": "hello@easyplumbingfl.site",
+    "city": "Tampa",
+    "area_label": "Tampa Bay",
+    "topbar_note": "24/7 emergency service. Real plumbers answer.",
+    "hours_emergency": "Open 24/7 for emergencies",
+    "hours_office": "Office: Mon–Sat, 7am–7pm"
+  },
+  "hero": {
+    "lead": "Leaks, clogs, water heaters and full repipes, fixed right the first time by licensed local plumbers. You get a flat price before any work starts, and we leave your home cleaner than we found it."
+  },
+  "trust": [
+    {
+      "icon": "shield",
+      "title": "Licensed & insured",
+      "text": "State-licensed plumbers, fully insured."
+    },
+    {
+      "icon": "tag",
+      "title": "Upfront pricing",
+      "text": "A flat quote before work starts."
+    },
+    {
+      "icon": "clock",
+      "title": "Same-day service",
+      "text": "Most jobs done the day you call."
+    },
+    {
+      "icon": "award",
+      "title": "1-year warranty",
+      "text": "On every repair, parts and labor."
+    }
+  ],
+  "services": [
+    {
+      "icon": "leak",
+      "title": "Leak Detection & Repair",
+      "description": "Hidden leaks pinpointed with acoustic and thermal tools, then repaired without tearing your home apart."
+    },
+    {
+      "icon": "slab",
+      "title": "Slab Leak Repair",
+      "description": "Most Florida homes sit on a concrete slab. We locate slab leaks precisely and reroute or repair with minimal mess."
+    },
+    {
+      "icon": "drain",
+      "title": "Drain Cleaning",
+      "description": "Slow sinks, backed-up tubs and main-line clogs cleared with professional snaking and hydro-jetting."
+    },
+    {
+      "icon": "heater",
+      "title": "Water Heaters",
+      "description": "Tank and tankless water heaters repaired, flushed and replaced. Most installs are finished the same day."
+    },
+    {
+      "icon": "pipe",
+      "title": "Repiping",
+      "description": "Whole-home repipes in PEX or copper to replace aging polybutylene, galvanized and cast-iron lines."
+    },
+    {
+      "icon": "camera",
+      "title": "Sewer Line Service",
+      "description": "Camera inspections, root removal and trenchless sewer repairs that keep your yard in one piece."
+    },
+    {
+      "icon": "glass",
+      "title": "Softeners & Filtration",
+      "description": "Florida's hard water is tough on fixtures and skin. Softeners, RO systems and whole-home filtration."
+    },
+    {
+      "icon": "faucet",
+      "title": "Fixtures & Toilets",
+      "description": "Faucets, toilets, garbage disposals and shower valves installed or repaired, neatly and fast."
+    }
+  ],
+  "emergency": {
+    "title": "Burst pipe? Water where it shouldn't be?",
+    "text": "Shut off your main water valve and call us. A licensed plumber can be on the way within the hour, day or night, weekends and holidays included."
+  },
+  "about": {
+    "lead": "Easy Plumbing FL started with a simple promise: show up on time, explain the problem in plain English and charge exactly what we quoted. Every job still works that way."
+  },
+  "stats": [
+    {
+      "pos": "a",
+      "value": "4.9",
+      "star": true,
+      "label": "Average rating"
+    },
+    {
+      "pos": "b",
+      "value": "2,500+",
+      "star": false,
+      "label": "Jobs completed"
+    },
+    {
+      "pos": "c",
+      "value": "<60 min",
+      "star": false,
+      "label": "Emergency response"
+    }
+  ],
+  "reviews": [
+    {
+      "quote": "Our water bill doubled and two other companies couldn't find why. Easy Plumbing found a slab leak in an hour, rerouted the line the same day and quoted exactly what we paid.",
+      "name": "Maria R.",
+      "credit": "Tampa · Slab leak repair"
+    },
+    {
+      "quote": "Water heater died on a Sunday morning. I called at 8, a plumber was here by 10 and we had hot water before lunch. Clean, friendly and no weekend upcharge games.",
+      "name": "Derek K.",
+      "credit": "St. Petersburg · Water heater"
+    },
+    {
+      "quote": "We repiped our 1978 home with them. The crew protected every floor, patched the drywall and finished a day early. You'd never know they were here.",
+      "name": "Linda S.",
+      "credit": "Clearwater · Whole-home repipe"
+    }
+  ],
+  "areas": [
+    "Tampa",
+    "St. Petersburg",
+    "Clearwater",
+    "Brandon",
+    "Riverview",
+    "Wesley Chapel",
+    "Largo",
+    "Palm Harbor",
+    "Dunedin",
+    "Temple Terrace",
+    "Lutz",
+    "Apollo Beach"
+  ],
+  "faq": [
+    {
+      "question": "How much do you charge?",
+      "answer": "Every job gets a flat, upfront price after your plumber diagnoses the problem, before any work starts. The price we quote is the price you pay, even if the job takes longer than expected."
+    },
+    {
+      "question": "Do you really offer 24/7 emergency service?",
+      "answer": "Yes. Nights, weekends and holidays, a real person answers and a licensed plumber is dispatched, usually within the hour."
+    },
+    {
+      "question": "Are your plumbers licensed and insured?",
+      "answer": "Every plumber on our team is state-licensed, fully insured and background-checked. We're happy to share proof of coverage before we start."
+    },
+    {
+      "question": "How quickly can you get here?",
+      "answer": "Most calls get a same-day appointment with a two-hour arrival window. We text you when your plumber is on the way."
+    },
+    {
+      "question": "Do you guarantee your work?",
+      "answer": "All repairs come with a 1-year parts and labor warranty. New water heaters and repipes are also covered by the manufacturer's warranty."
+    }
+  ]
+}

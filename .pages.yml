@@ -1,0 +1,214 @@
+# Pages CMS — defines what the client can edit and how it is labelled.
+# Everything here maps to content/site.json. Docs: https://pagescms.org/docs/
+media:
+  input: images
+  output: /images
+
+content:
+  - name: site
+    label: Website content
+    type: file
+    path: content/site.json
+    format: json
+    operations:
+      delete: false
+    fields:
+      - name: contact
+        label: Contact details
+        type: object
+        fields:
+          - name: phone
+            label: Phone number
+            type: string
+            required: true
+            description: Shown on every call button. The click-to-call link updates by itself.
+          - name: email
+            label: Email address
+            type: string
+            required: true
+          - name: area_label
+            label: Service area name
+            type: string
+            required: true
+            description: 'Used in headings, for example "Proudly serving the Tampa Bay area".'
+          - name: city
+            label: Main city
+            type: string
+            description: Used by search engines for your business listing.
+          - name: topbar_note
+            label: Message in the top bar
+            type: string
+          - name: hours_emergency
+            label: Emergency hours
+            type: string
+          - name: hours_office
+            label: Office hours
+            type: string
+
+      - name: hero
+        label: Top of the page
+        type: object
+        fields:
+          - name: lead
+            label: Opening paragraph
+            type: text
+            required: true
+
+      - name: trust
+        label: Promise strip
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{title}'
+        fields:
+          - name: icon
+            label: Icon
+            type: select
+            options:
+              values:
+                - { name: shield, label: Shield }
+                - { name: tag, label: Price tag }
+                - { name: clock, label: Clock }
+                - { name: award, label: Award }
+          - name: title
+            label: Title
+            type: string
+            required: true
+          - name: text
+            label: One-line description
+            type: string
+
+      - name: services
+        label: Services
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{title}'
+        fields:
+          - name: icon
+            label: Icon
+            type: select
+            options:
+              values:
+                - { name: leak, label: Water drop }
+                - { name: slab, label: House and drop }
+                - { name: drain, label: Drain }
+                - { name: heater, label: Water heater }
+                - { name: pipe, label: Pipe }
+                - { name: camera, label: Inspection camera }
+                - { name: glass, label: Glass of water }
+                - { name: faucet, label: Faucet }
+          - name: title
+            label: Service name
+            type: string
+            required: true
+          - name: description
+            label: Description
+            type: text
+            required: true
+
+      - name: emergency
+        label: Emergency banner
+        type: object
+        fields:
+          - name: title
+            label: Headline
+            type: string
+          - name: text
+            label: Paragraph
+            type: text
+
+      - name: about
+        label: About section
+        type: object
+        fields:
+          - name: lead
+            label: Paragraph
+            type: text
+
+      - name: stats
+        label: Numbers on the picture
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{value} — {label}'
+        fields:
+          - name: value
+            label: Number
+            type: string
+            required: true
+          - name: label
+            label: What it means
+            type: string
+            required: true
+          - name: star
+            label: Show a star after the number
+            type: boolean
+          - name: pos
+            label: Position
+            type: string
+            hidden: true
+
+      - name: reviews
+        label: Reviews
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{name}'
+        fields:
+          - name: quote
+            label: What they said
+            type: text
+            required: true
+          - name: name
+            label: Their name
+            type: string
+            required: true
+            description: The initials in the circle come from this name.
+          - name: credit
+            label: Town and job
+            type: string
+            description: 'For example "Tampa · Slab leak repair".'
+
+      - name: areas
+        label: Towns you serve
+        type: string
+        list: true
+
+      - name: faq
+        label: Questions and answers
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: '{question}'
+        fields:
+          - name: question
+            label: Question
+            type: string
+            required: true
+          - name: answer
+            label: Answer
+            type: text
+            required: true
+
+      - name: seo
+        label: How the site appears in search
+        type: object
+        fields:
+          - name: title
+            label: Page title
+            type: string
+            description: The blue link in Google results. Keep it under about 60 characters.
+            options:
+              maxlength: 70
+          - name: description
+            label: Description
+            type: text
+            description: The grey text under the link in Google. Keep it under about 155 characters.
+            options:
+              maxlength: 170
